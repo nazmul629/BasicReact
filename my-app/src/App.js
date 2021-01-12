@@ -1,13 +1,21 @@
 import React from 'react'; 
 import Card from './components/Card'
+import Data from './data.json'
 
 
-var App = () => {
-    return (<div>
-            <h2 className="heading">Todo App</h2>
-                <Card title="Title First" decs="Lorem ipdome this  is demey word 1"/>
-                   <Card title="Title Secod" decs ="This is Second Driscription for the Second box"/>
-         </div>)
+var App = ()=> {
+    var items = []
+    for(var x=0;x<Data.length;x++){
+        items.push(<Card title={Data[x].title} decs={Data[x].decs}/>)
+    }
+    console.log(Data)
+
+    return(
+            <div>
+                <h2 className="heading">Todo App</h2>
+                    {items}
+            </div>
+        )
 }
 
 export default App
