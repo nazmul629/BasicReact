@@ -8,13 +8,12 @@ import Contorl from './Conditonal_Rendaring/Contorl'
 import EventHC from './EVENT_HNADLER_CLASS/EvenHC'
 import EB from './EVENT_HNADLER_CLASS/EventBaind'
 import HOOK from './HOOKSTATE/Hook'
-
-
+import Form from './Form/From1'
 var App = ()=> {
 
    return(
             <div>
-                <div>
+                {/* <div>
                     <h2 className="heading">Todo App</h2>
                     {Data.map((item)=> <Card title={item.title} decs={item.decs}/>)};
                     {<Card2 name="Nazmul" age="19"/>}
@@ -29,8 +28,8 @@ var App = ()=> {
                     <EventHC />
                     <EB />
                     <HOOK />
-                </div>
-
+                </div>  */}
+                <Form />
             </div>
         )
 }

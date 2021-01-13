@@ -51,7 +51,7 @@
     background-color: dimgrey;
     box-shadow: 5px 6px 2px gray;
     border-radius: 5%;
-    background-position-x: center;
+    /* background-position-x: center; */
 
 }
 .Value{
