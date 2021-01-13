@@ -5,6 +5,7 @@ var year = 2021;
 
 
 var Card = (props) => {
+  
   var{title,decs} = props
   return <div className="card">
             <h3 className="cardTitle">{title}</h3>

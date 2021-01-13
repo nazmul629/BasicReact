@@ -34,3 +34,48 @@
     font-weight: bold;
 
 }
+
+.Card2{
+    background-color: darkcyan;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 6px 2px gray;
+    width: 370px;
+    display: inline-block;
+    border-radius: 10%;
+   
+}
+
+.StateBox{
+  
+    background-color: dimgrey;
+    box-shadow: 5px 6px 2px gray;
+    border-radius: 5%;
+    background-position-x: center;
+
+}
+.Value{
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10;
+}
+
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: limegreen;
+    color: white;
+    font-size: 2rem;
+    width: 89px;
+    margin-left: 5px;
+}
+
+input{
+    margin: 10px;
+    height: 30px;
+    width: 370px;   
+    border: 3px solid royalblue;
+    box-shadow: 2px 4px 7px gray;
+    
+}
