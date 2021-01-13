@@ -7,6 +7,7 @@ import STATE from './components/STATE';
 import Contorl from './Conditonal_Rendaring/Contorl'
 import EventHC from './EVENT_HNADLER_CLASS/EvenHC'
 import EB from './EVENT_HNADLER_CLASS/EventBaind'
+import HOOK from './HOOKSTATE/Hook'
 
 
 var App = ()=> {
@@ -27,6 +28,7 @@ var App = ()=> {
                     <Contorl />
                     <EventHC />
                     <EB />
+                    <HOOK />
                 </div>
 
             </div>

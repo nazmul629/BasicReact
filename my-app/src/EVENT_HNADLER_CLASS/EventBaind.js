@@ -24,6 +24,7 @@ dec=()=>{
     render() {
         return (
             <div>
+                <h2>Count Incremnnt Class and Buind useing bind</h2>
                 <h2> {this.state.count}</h2>
                 <button onClick={this.Inc}> Incrise </button>
             </div>
