@@ -1,28 +1,64 @@
 import React, { Component } from 'react'
+
  class App extends Component {
 
   state={
     count : 0
   }
+  inteevalId=null 
+
+  incrementCount = ()=>{
+    this.setState({count: this.state.count+1})
+
+  }
+
+  decrementCount =()=>{
+    if(this.state.count > 0){
+      this.setState({count: this.state.count-1})
+    }
+  }
+  startTimer =()=>{
+    if(this.state.count > 0 && !this.inteevalId){
+      this.inteevalId = setInterval(()=>{
+        this.setState({count: this.state.count-1},()=>{
+          if(this.state.count ===0 ){
+            alert('Time Out')
+            clearInterval(this.inteevalId)
+            this.inteevalId=null
+          }
+        })
+      },1000)
+    }
+  }
+
+stopTimer = () => {
+ if(this.inteevalId){
+  clearInterval(this.inteevalId)
+  this.inteevalId=null
+ }
+}
+
+resetTimer =()=>{
+  this.setState({count:0})
+  clearInterval(this.inteevalId)
+  this.inteevalId = null
+}
 
   render() {
     return(
       <div className='App'>
-        <h1>Why Do we need state</h1>
-        <h1>Count ={this.state.count} </h1>
-        <button onClick={()=> {
+        <h1>Simple Timer</h1>
+          <div className="Container">
+            <button className='Btn'   onClick={this.decrementCount}>-</button>
+            <samp className='Text'>{this.state.count}</samp>
+            <button className='Btn' onClick={this.incrementCount}>+</button>
+          </div>
 
-         this.setState(
-
-           prev => {
-             return{
-               count: prev.count+1
-             };
-           },()=>{
-            console.log('Clicked', this.state.count)
-           })
-        
-        }}> Increment </button>
+           <div className="Container">
+             <button className='Btn' onClick={this.startTimer}> Start</button>
+             <button className='Btn' onClick={this.stopTimer}> Stop</button>
+             <button className='Btn' onClick={this.resetTimer}>Reset </button>
+           </div>
       </div>
     )
   }
