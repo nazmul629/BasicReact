@@ -1,26 +1,55 @@
 import React, { Component } from 'react'
-import Button  from './style/button'
-import BoxA  from './style/boxa'
-import BoxB  from './style/boxb'
-import './style/app.css'
 
+import classes from './style/app.module.css'
 
-const myTitle = {
-  color: 'blue',
-  fontFamily: 'Arial',
-  fortSize:'36px',
- 'text-align' : 'center'
-} 
 
  class App extends Component {
+
+
+  state={
+    name: 'nasda'
+  }
+
+  handelButtonClick = e =>{
+    console.log(e);
+    console.log('I am a cute little Button ');
+  }
+
+  changeHandelar = e =>{
+    this.setState({
+      name:e.target.value
+    })
+    console.log(e.target.value);
+  }
+
+  handelFocus=e=>{
+    console.log('I am Fouse Evnet ');
+  }
+  handelBlur=e=>{
+    if(!this.state.name){
+      alert('Please Enter Your Name')
+    }
+    console.log('I am Blur Evnet ');
+  }
+
   render() {
     return(
-      <div >
-        <h1 style={myTitle}> How to Style in React </h1>
-          <Button > Click  me </Button>  
+      <div className={classes.Wrapper}>
+        <h1 className={classes.Heading}> Event in React</h1>
+        <button onClick={this.handelButtonClick} className='Btn'> Click Me</button>
+        <br />
+        <input
+           onChange={this.changeHandelar} 
+           className={classes.TextField} 
+           value={this.state.name} 
+           type="text"
+           placeholder="Inter Some Text"
+           onFocus={this.handelFocus}
+           onBlur={this.handelBlur} 
+            />
 
-          <BoxB />
-          <BoxA />
+        { this.state.name && <h3> Welcome, {this.state.name}</h3>}
+
       </div>
     )
   }
