@@ -1,34 +1,31 @@
 import React, { Component } from 'react'
-import FunctionalCompnent from './FunctionalCompnent'
-import Profile from './profile'
-import Skills from './profile/skills'
-import MyProps from './props/index'
-
-const ChildComponet = (props)=>{
-  return <div>
-      {props.children}
-  </div>
-}
-
  class App extends Component {
+
+  state={
+    count : 0
+  }
+
   render() {
-    return (
-      <div className ="App">
+    return(
+      <div className='App'>
+        <h1>Why Do we need state</h1>
+        <h1>Count ={this.state.count} </h1>
+        <button onClick={()=> {
 
-        <Profile />
-        
-   
+         this.setState(
 
-        <ChildComponet>
-          <h2> Hello This is Somethng </h2>  
-        </ChildComponet>
+           prev => {
+             return{
+               count: prev.count+1
+             };
+           },()=>{
+            console.log('Clicked', this.state.count)
+           })
         
+        }}> Increment </button>
       </div>
     )
   }
 }
 export default App
 
-const AnotherFunctionalComponnt=()=>{
-  return <h1> This is a Arrow Functions </h1>
-}
