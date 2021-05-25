@@ -15,9 +15,9 @@ export default class UncoltroledForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input className='form-control' name = 'text' name='name' placeholder='Nazmul Islam'/>
-                    <input className='form-control' name = 'email' name='email' placeholder='test@abc.con'/>
-                    <input className='form-control' name = 'password' name='password' placeholder='*******'/>
+                    <input className='form-control' type = 'text' name='name' placeholder='Nazmul Islam'/>
+                    <input className='form-control' type = 'email' name='email' placeholder='test@abc.con'/>
+                    <input className='form-control' type = 'password' name='password' placeholder='*******'/>
                     <button type='submit' className='btn btn-dark'> Submit</button>
                 </form>
             </div>

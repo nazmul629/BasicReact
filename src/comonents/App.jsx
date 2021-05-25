@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ControledForm from './forms/Controled-form'
 import UncoltroledForm from './forms/uncoltroled-form'
 import Inputs from './inputs'
 
@@ -8,7 +9,7 @@ import Inputs from './inputs'
   render() {
     return(
       <div>
-        <UncoltroledForm />
+        <ControledForm />
       </div>
     )
   }
